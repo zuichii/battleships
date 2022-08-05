@@ -3,14 +3,14 @@
 using namespace std;
 
 void print_binary_str(std::string decimal_number){
-    int n = stoi(decimal_number);
+    int d = stoi(decimal_number);
 
     int i;
 
-    int array[32];
-    for(i = 0; n > 0; i++){
-        array[i] = n % 2;
-        n = n/2;
+    int array[10];
+    for(i = 0; d > 0; i++){
+        array[i] = d % 2;
+        d /= 2;
     }
 
     for(i = i-1; i >= 0; i--){
