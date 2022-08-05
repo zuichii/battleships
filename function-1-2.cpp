@@ -27,9 +27,11 @@ int is_identity(int array[10][10]){
     if(valid == true){
         return 1;
     }
-    else{
+    else if(valid == false){
         return 0;
     }
+
+    return 0;
 
 
 }
