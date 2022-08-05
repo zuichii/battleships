@@ -17,7 +17,7 @@ bool is_palindrome(int integers[], int length){
 
 
 int sum_array_elements(int integers[], int length){
-    int sum;
+    int sum = 0;
     if(length <= 0){
         return -1;
     }
@@ -26,6 +26,7 @@ int sum_array_elements(int integers[], int length){
         sum+= integers[i];
         }
     }
+    cout << sum;
     return sum;
 
 }
