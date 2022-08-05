@@ -10,7 +10,7 @@ int is_identity(int array[10][10]){
                 valid = true;
             }
             else{
-                valid = false;
+                return 0;
             }
 
 
@@ -18,7 +18,7 @@ int is_identity(int array[10][10]){
                 valid = true;
             }
             else{
-                valid = false;
+                return false;
             }
         
         }
@@ -26,9 +26,6 @@ int is_identity(int array[10][10]){
 
     if(valid == true){
         return 1;
-    }
-    else if(valid == false){
-        return 0;
     }
 
     return 0;
