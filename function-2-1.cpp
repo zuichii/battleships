@@ -2,27 +2,21 @@
 #include <iostream>
 using namespace std;
 
-
-
 void print_binary_str(std::string decimal_number){
-   
-    int number = stoi(decimal_number);
-    int i = 0;
-    int binaryArray[10];
+    int n = stoi(decimal_number);
 
-    while(number > 0){
-        binaryArray[i] = number % 2;
-        number = number / 2;
-        i++;
+    int i;
+
+    int array[32];
+    for(i = 0; n > 0; i++){
+        array[i] = n % 2;
+        n = n/2;
     }
 
-    for(int j = i - 1; j >= 0; j--){
-        cout << binaryArray[j];
+    for(i = i-1; i >= 0; i--){
+        cout << array[i];
     }
     cout << endl;
-
     return;
-
-
 
 }
