@@ -1,21 +1,20 @@
-
-#include <cmath>
 #include <iostream>
+#include <cmath>
 using namespace std;
 
-int bin_to_int(int binary_digits[], int number_of_digits) {
-  int sum = 0;
-  int ans = 0;
-  int n = number_of_digits;
-  int power = 0;
 
-  for (int i = number_of_digits - 1; i > 0; i--) {
-    ans = (binary_digits[i]) * pow(2, power);
-    power ++;
-    sum = sum + ans;
-   
-  }
-  cout << sum;
+int bin_to_int(int binary_digits[], int number_of_digits){
+    
+    int res = 0;
+    int n = number_of_digits;
 
-  return sum;
+    for(int i = 0; i < n; i++){
+        if(binary_digits[i] == 1){
+            res = res + pow(2,n-i-1);
+        }
+    }
+    return res;
+    cout << res;
+    
 }
+ 
