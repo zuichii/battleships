@@ -8,7 +8,7 @@ void print_matrix(int array[10][10]){
             if (j >= 0 && j <= 9){
                 cout << array[i][j] << " ";
             }
-            else{
+            if (j == 10){
                 cout << array[i][j];
             }
         }
