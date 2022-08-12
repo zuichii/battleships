@@ -1,5 +1,7 @@
 
 #include <cmath>
+#include <iostream>
+using namespace std;
 
 int bin_to_int(int binary_digits[], int number_of_digits) {
   int sum = 0;
@@ -13,5 +15,7 @@ int bin_to_int(int binary_digits[], int number_of_digits) {
     sum = sum + ans;
    
   }
+  cout << sum;
+
   return sum;
 }
