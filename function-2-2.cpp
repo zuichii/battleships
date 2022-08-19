@@ -5,7 +5,7 @@ int max_sub_sum(int *nums,int length){
     int check = 0;
 
     for(int i = 0; i < length; i++){
-        check += *(nums+i);
+        check += nums[i];
 
         if(check < 0){
             check = 0;
