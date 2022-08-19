@@ -14,11 +14,7 @@ int max_sub_sum(int *nums,int length){
         if(max < check){
             max = check;
         }
-        return max;
     }
-
-    return 0;
-
-
+    return max;
 
 }
