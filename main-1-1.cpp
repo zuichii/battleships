@@ -10,12 +10,7 @@ int main(){
 
     string_2d_copy(first, second, n);
 
-
-
-
-
- 
-
+    return 0;
 
 
 }
