@@ -11,14 +11,14 @@ bool equalsArray(int *numbers1,int *numbers2,int length){
             }
             else{
                 check = false;
-                cout << check;
+
                 return check;
             }
     
         }
     }
 
-    cout << check;
+    
     return check;
     
 }
