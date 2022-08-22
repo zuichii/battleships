@@ -22,3 +22,15 @@ bool equalsArray(int *numbers1,int *numbers2,int length){
     return check;
     
 }
+
+
+int *readNumbers(){
+    int *n;
+    n = new int[10];
+    for(int i = 0; i < 10; i++){
+
+        cout << "Enter a number: ";
+        cin >> n[i];
+    }
+    return n;
+}
