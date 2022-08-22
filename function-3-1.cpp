@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+bool check = true;
 bool equalsArray(int *numbers1,int *numbers2,int length){
     if(length < 0){
         return false;
@@ -12,6 +15,8 @@ bool equalsArray(int *numbers1,int *numbers2,int length){
     
         }
     }
-    return true;
+
+    cout << check;
+    return check;
     
 }
