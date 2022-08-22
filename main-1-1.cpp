@@ -1,5 +1,5 @@
 extern void printNumbers(int *numbers,int length);
-int *readNumbers();
+extern int *readNumbers();
 
 int main(){
     int length = 10;

@@ -10,7 +10,9 @@ bool equalsArray(int *numbers1,int *numbers2,int length){
             if(numbers1[i] == numbers2[i]){
             }
             else{
-                return false;
+                check = false;
+                cout << check;
+                return check;
             }
     
         }
