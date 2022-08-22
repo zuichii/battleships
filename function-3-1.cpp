@@ -29,7 +29,7 @@ int *readNumbers(){
     n = new int[10];
     for(int i = 0; i < 10; i++){
 
-        cout << "Enter a number: ";
+        
         cin >> n[i];
     }
     return n;
