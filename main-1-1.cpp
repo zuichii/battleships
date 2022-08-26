@@ -7,11 +7,7 @@ int main(){
     int* vals = numbers;
     int len = 5;
 
-    //pointer_array(vals, len);
-
-    cout << *(vals+1);
-
+    pointer_array(vals, len);
 
    
-
 }
