@@ -7,7 +7,7 @@ int main(){
     int* vals = numbers;
     int len = 5;
 
-    pointer_array(vals, len);
 
+    int ** val_ptrs = pointer_array(vals, len);
    
 }
