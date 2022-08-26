@@ -9,8 +9,9 @@ int main(){
 
     //pointer_array(vals, len);
 
+    cout << *(vals+1);
 
-    vals = new int[5];
-    cout << vals[1];
+
+   
 
 }
