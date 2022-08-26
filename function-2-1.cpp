@@ -14,5 +14,4 @@ int tax_bracket_lookup(int income){
     if(income > 1000000){
         return 30;
     }
-    return 0;
 }
