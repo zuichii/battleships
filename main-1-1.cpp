@@ -8,6 +8,6 @@ int main(){
     int len = 5;
 
 
-    int ** val_ptrs = pointer_array(vals, len);
-   
+    int** val_ptrs = pointer_array(vals, len);
+    cout << *(val_ptrs[2]);
 }
