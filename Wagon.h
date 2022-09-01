@@ -1,6 +1,7 @@
 #ifndef WAGON_H
 #define WAGON_H
 #include <string>
+#include "Capybara.h"
 using namespace std;
 
 // Class definition for a book
@@ -11,16 +12,15 @@ public:
     Wagon();
     
     //attributes
-    string name;
-    int age;
+    Capybara seat[4];
+    int x;
 
     //functions
-    void setName(string capyName);
-    void setAge(int capyAge);
-    string getName();
-    int getAge();
+    bool addCapybara(Capybara newCapy);
+    void emptyWagon();
+    void printCapybaras();             
 
     //destructor 
-    ~Capybara();
+    ~Wagon();
 };
-#endif //CAPYBARA_H
+#endif //WAGON_H
