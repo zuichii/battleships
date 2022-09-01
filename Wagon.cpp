@@ -4,6 +4,8 @@
 using namespace std;
 
 Wagon::Wagon(){
+    x = 0;
+
 }
 
 bool Wagon::addCapybara(Capybara newCapy){
