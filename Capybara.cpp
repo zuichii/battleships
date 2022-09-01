@@ -13,8 +13,11 @@ void Capybara::setAge(int capyAge){
     age = capyAge;
 }
 
-string getName(){
+string Capybara::getName(){
     return name;
+}
+int Capybara::getAge(){
+    return age;
 }
 
 

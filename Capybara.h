@@ -12,7 +12,7 @@ public:
     
     //attributes
     string name;
-    string age;
+    int age;
 
     //functions
     void setName(string capyName);
