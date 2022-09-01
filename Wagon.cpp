@@ -4,7 +4,7 @@
 using namespace std;
 
 Wagon::Wagon(){
-    int x = 0;
+    x = 0;
 
 }
 
@@ -14,15 +14,16 @@ bool Wagon::addCapybara(Capybara newCapy){
     }
     else{
         seat[x] = newCapy;
+        
         x++;
         return true;
+
     }
+    
     
 }
 
 void Wagon::emptyWagon(){
-    
-
     x = 0;
 }
 
