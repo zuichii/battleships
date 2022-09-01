@@ -2,6 +2,10 @@
 #include "Person.h"
 using namespace std;
 
+Person::Person(){
+
+}
+
 Person::Person(int mySalary, string myName){
     salary = mySalary;
     name = myName;

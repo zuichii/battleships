@@ -8,6 +8,7 @@ class Person
 {
 public:
     //constructors
+    Person();
     Person(int mySalary, string myName); // a name and salary must be provided to create a Person
     
     //attributes
