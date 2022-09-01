@@ -22,7 +22,7 @@ bool Wagon::addCapybara(Capybara newCapy){
 
 void Wagon::emptyWagon(){
     for(int i = 0; i < 4; i++){
-        seat[x] = {};
+        seat[i] = {};
     }
     x = 0;
 }
