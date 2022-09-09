@@ -19,6 +19,8 @@ class Truck_yard{
         int get_stock_count(int code);
         Truck *get_current_stock_list();
         bool add_stock(Truck c);  
+
+        ~Truck_yard();
 };
         
 
