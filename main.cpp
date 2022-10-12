@@ -15,11 +15,12 @@ int main(){
     //int cord2 = 5;
 
     //a.placeShip(cord, cord2);
-    a.updateBoard(true, 0, 0);
+    //a.updateBoard(true, 0, 0);
+    //a.validatePlacement();
     a.printBoard();
 
     return 0;
     
-    //cin >> "Enter x coordinate: ";
+    //cin >> "Enter x coordinate: ";    
 
 }

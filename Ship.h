@@ -8,7 +8,7 @@ class Ship: public Tile{
 
     public:
 
-    int size;
+    int size = 2;
     bool hit = false;
     char status = 'S';
     int totalShips = 5;
