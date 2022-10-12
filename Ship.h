@@ -11,6 +11,7 @@ class Ship: public Tile{
     int size;
     bool hit = false;
     char status = 'S';
+    int totalShips = 5;
 
     
     Ship();
