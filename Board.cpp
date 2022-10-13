@@ -106,14 +106,14 @@ void Board::initBoard(){
 
     int noShipsPlaced = 0;
     int numberOfShips = 5;
-    string randomDirection = " ";
-    int size = 2;
+    string randomDirection;
+    int size;
     
 
     while(noShipsPlaced < numberOfShips){
         int randomRow = rand() % 10;
         int randomCol = rand() % 10;
-        int randomDirectionNumber = rand() % 3;
+        int randomDirectionNumber = rand() % 4;
         if (randomDirectionNumber == 0){
             randomDirection = "left";
         }
@@ -126,7 +126,7 @@ void Board::initBoard(){
         else if (randomDirectionNumber == 3){
             randomDirection = "down";
         }
-        if (placeShip(randomRow, randomCol, randomDirection, size)){
+        if (placeShip(randomRow, randomCol, randomDirection, size) == true){
             noShipsPlaced++;
         }
 
