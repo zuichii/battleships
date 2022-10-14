@@ -11,7 +11,7 @@ class Board: public Tile{
         Tile grid[10][10];
         Board();
 
-        void initBoard();
+        void initBoard(int length);
         void updateBoard(bool hasShip, int x, int y);
         void printBoard();
         bool validatePlacement(int x1, int x2, int y1, int y2);

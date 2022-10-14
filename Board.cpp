@@ -97,39 +97,41 @@ bool Board::placeShip(int x, int y, string direction, int size){
     return validatePlacement(x1, x2, y1, y2);
 };
 
-void Board::initBoard(){
+void Board::initBoard(int length){
     for(int x = 0; x < 10; x++){
         for(int y = 0; y < 10; y++){
             grid[x][y].status = '-';
             } 
         }
+    
+};
 
-    int noShipsPlaced = 0;
-    int numberOfShips = 5;
-    string randomDirection;
-    int size;
+
+    //int noShipsPlaced = 0;
+    //int numberOfShips = 5;
+    //string randomDirection;
+    //int size;
     
 
-    while(noShipsPlaced < numberOfShips){
-        int randomRow = rand() % 10;
-        int randomCol = rand() % 10;
-        int randomDirectionNumber = rand() % 4;
-        if (randomDirectionNumber == 0){
-            randomDirection = "left";
-        }
-        else if (randomDirectionNumber == 1){
-            randomDirection = "right";
-        }
-        else if (randomDirectionNumber == 2){
-            randomDirection = "up";
-        }
-        else if (randomDirectionNumber == 3){
-            randomDirection = "down";
-        }
-        if (placeShip(randomRow, randomCol, randomDirection, size) == true){
-            noShipsPlaced++;
-        }
+    //while(noShipsPlaced < numberOfShips){
+      //  int randomRow = rand() % 10;
+       // int randomCol = rand() % 10;
+       // int randomDirectionNumber = rand() % 4;
+        //if (randomDirectionNumber == 0){
+        //    randomDirection = "left";
+        //}
+        //else if (randomDirectionNumber == 1){
+         //   randomDirection = "right";
+        //}
+        //else if (randomDirectionNumber == 2){
+        //    randomDirection = "up";
+        //}
+        //else if (randomDirectionNumber == 3){
+        //    randomDirection = "down";
+        //}
+        //if (placeShip(randomRow, randomCol, randomDirection, size) == true){
+        //    noShipsPlaced++;
+        //}
 
-    }
-    return;
-};
+    //}
+    //return;
