@@ -57,7 +57,7 @@ void Board::setShips(Ship currentShip){
     
     while(validShip == false){  //loop will keep going until a ship has been placed
 
-
+        
         while(setHorizontal == false){ // sub loop that places a ship 
             
             if(pickDirection == 0){  //code for horizontal
@@ -66,14 +66,14 @@ void Board::setShips(Ship currentShip){
                 canPlace = false;
 
                 for(int i = xpos; i < xpos+currentShip.size; i++){ //check ship placement
-                    if(Board::grid[i][ypos].status == '-'){ //if not fully blank break loop
+                    if(Board::grid[i][ypos].status == '-'){ //check if the desired space is empty
                         canPlace = true;
                     }
-                    else{ //if all blank, place the ship
+                    else{ //if not empty, breaak
                         break;
                         
                     }
-                    while(canPlace == true){
+                    if(canPlace == true){
                         for(int i = xpos; i < (xpos+currentShip.size); i++){
                             Board::grid[i][ypos].status = currentShip.status;
                             
@@ -105,7 +105,7 @@ void Board::setShips(Ship currentShip){
                         break;
                         
                     }
-                    while(canPlace == true){
+                    if(canPlace == true){
                         for(int i = ypos; i < (ypos+currentShip.size); i++){
                             Board::grid[xpos][i].status = currentShip.status;
                         }
