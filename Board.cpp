@@ -65,26 +65,21 @@ void Board::setShips(Ship currentShip){
                 int ypos = rand() % 10;
                 canPlace = false;
 
-                for(int i = xpos; i < xpos+currentShip.size; i++){ //check ship placement
-                    if(Board::grid[i][ypos].status == '-'){ //check if the desired space is empty
-                        canPlace = true;
-                    }
-                    else{ //if not empty, breaak
-                        break;
-                        
-                    }
-                    if(canPlace == true){
-                        for(int i = xpos; i < (xpos+currentShip.size); i++){
-                            Board::grid[i][ypos].status = currentShip.status;
-                            
-                        }
-                        setHorizontal = true;  
-                        validShip = true;
-                    }
+            for(int i = xpos; i < xpos+currentShip.size; i++){ //check ship placement
+                if(Board::grid[i][ypos].status == '-'){ //check if the desired space is empty
+                    canPlace = true;
                 }
+            }
+            if(canPlace == true){
+                for(int i = xpos; i < (xpos+currentShip.size); i++){
+                    Board::grid[i][ypos].status = currentShip.status;    
+                }
+                setHorizontal = true;  
+                validShip = true;
             }
             else{
                 break;
+            }
             }
         }
         
@@ -92,30 +87,26 @@ void Board::setShips(Ship currentShip){
         
         while(setVertical == false){ // sub loop that places a ship vertically
         
-            if(pickDirection == 1){  //code for vertical
-                int xpos = rand() % 10;
-                int ypos = rand() % (10-currentShip.size);
-                canPlace = false;
+        if(pickDirection == 1){  //code for vertical
+            int xpos = rand() % 10;
+            int ypos = rand() % (10-currentShip.size);
+            canPlace = false;
 
-                for(int i = ypos; i < ypos+currentShip.size; i++){ //check ship placement
-                    if(Board::grid[xpos][i].status == '-'){ // if not fully blank break loop
-                        canPlace = true;
-                    }
-                    else{ //if all blank place ship
-                        break;
-                        
-                    }
-                    if(canPlace == true){
-                        for(int i = ypos; i < (ypos+currentShip.size); i++){
-                            Board::grid[xpos][i].status = currentShip.status;
-                        }
-                        setVertical = true;
-                        validShip = true;
-                    }
+            for(int i = ypos; i < ypos+currentShip.size; i++){ //check ship placement
+                if(Board::grid[xpos][i].status == '-'){ // if not fully blank break loop
+                    canPlace = true;
                 }
+            }
+            if(canPlace == true){
+                for(int i = ypos; i < (ypos+currentShip.size); i++){
+                    Board::grid[xpos][i].status = currentShip.status;
+                }
+                setVertical = true;
+                validShip = true;
             }
             else{
                 break;
+            }
             }
         }
     }
