@@ -49,7 +49,7 @@ void Board::setShips(Ship currentShip){
     bool setVertical = false;
     bool validShip = false;
     //int numberOfShips = 5;
-    bool canPlace;
+    int emptySpaces;
     int pickDirection = rand() % 2; //randomly pick direction
     srand (time(NULL));
     
@@ -63,14 +63,14 @@ void Board::setShips(Ship currentShip){
             if(pickDirection == 0){  //code for horizontal
                 int xpos = rand() % (10-currentShip.size);
                 int ypos = rand() % 10;
-                canPlace = false;
+                emptySpaces = 0;
 
             for(int i = xpos; i < xpos+currentShip.size; i++){ //check ship placement
                 if(Board::grid[i][ypos].status == '-'){ //check if the desired space is empty
-                    canPlace = true;
+                    emptySpaces++;
                 }
             }
-            if(canPlace == true){
+            if(emptySpaces == currentShip.size){
                 for(int i = xpos; i < (xpos+currentShip.size); i++){
                     Board::grid[i][ypos].status = currentShip.status;    
                 }
@@ -87,17 +87,17 @@ void Board::setShips(Ship currentShip){
         
         while(setVertical == false){ // sub loop that places a ship vertically
         
-        if(pickDirection == 1){  //code for vertical
-            int xpos = rand() % 10;
-            int ypos = rand() % (10-currentShip.size);
-            canPlace = false;
+            if(pickDirection == 1){  //code for vertical
+                int xpos = rand() % 10;
+                int ypos = rand() % (10-currentShip.size);
+                emptySpaces = false;
 
             for(int i = ypos; i < ypos+currentShip.size; i++){ //check ship placement
                 if(Board::grid[xpos][i].status == '-'){ // if not fully blank break loop
-                    canPlace = true;
+                    emptySpaces++;
                 }
             }
-            if(canPlace == true){
+            if(emptySpaces == currentShip.size){
                 for(int i = ypos; i < (ypos+currentShip.size); i++){
                     Board::grid[xpos][i].status = currentShip.status;
                 }
