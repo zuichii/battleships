@@ -9,12 +9,24 @@
 using namespace std;
 
 int main(){
-    Board a;
-
+    Board a; 
     
     a.initBoard();
     
-    //a.printBoard();
+
+    a.printBoard();
+
+    return 0;
+    
+    
+    
+    
+    
+    //a.setShip(s1.size);
+    //a.setShip(s2.size);
+    //cin >> "Enter x coordinate: ";    
+
+}  //a.printBoard();
     
     //return 0;
 
@@ -24,13 +36,3 @@ int main(){
     //a.placeShip(cord, cord2);
     //a.updateBoard(true, 0, 0);
     //a.validatePlacement();
-    a.printBoard();
-    
-    
-    //a.setShip(s1.size);
-    //a.setShip(s2.size);
-    return 0;
-    
-    //cin >> "Enter x coordinate: ";    
-
-}

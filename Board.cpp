@@ -88,8 +88,6 @@ void Board::setShips(Ship currentShip){
             }
         }
         
-
-        
         while(setVertical == false){ // sub loop that places a ship vertically
         
             if(pickDirection == 1){  //code for vertical
@@ -137,6 +135,8 @@ void Board::initBoard(){
     
     
 };
+
+
 
     
 
