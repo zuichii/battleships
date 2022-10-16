@@ -11,9 +11,6 @@ using namespace std;
 int main(){
 
     Board a;
-    
-    
-
 
     
     a.initBoard();

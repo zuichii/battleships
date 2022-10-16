@@ -24,11 +24,12 @@ class Board: public Tile{
         
 
 
-        void initBoard(int length);
+        void initBoard();
+        void setShips(int length);
         void updateBoard(bool hasShip, int x, int y);
         void printBoard();
-        bool validatePlacement(int x1, int x2, int y1, int y2);
-        bool placeShip(int x, int y, string direction, int size);
+        //bool validatePlacement(int x1, int x2, int y1, int y2);
+        //bool placeShip(int x, int y, string direction, int size);
 
 
 };
