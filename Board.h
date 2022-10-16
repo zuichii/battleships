@@ -25,7 +25,7 @@ class Board: public Tile{
 
 
         void initBoard();
-        void setShips(int length);
+        void setShips(Ship currentShip);
         void updateBoard(bool hasShip, int x, int y);
         void printBoard();
         //bool validatePlacement(int x1, int x2, int y1, int y2);

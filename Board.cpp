@@ -43,33 +43,43 @@ void Board::printBoard(){
 };
 
 
-void Board::setShips(int length){
+void Board::setShips(Ship currentShip){
     
     bool setHorizontal = false;
     bool setVertical = false;
     bool validShip = false;
     //int numberOfShips = 5;
+    bool canPlace;
+    int pickDirection = rand() % 2; //randomly pick direction
+    srand (time(NULL));
     
-    while(validShip = false){  //loop will keep going until a ship has been placed
+    
+    
+    while(validShip == false){  //loop will keep going until a ship has been placed
 
-        int pickDirection = rand() % 2; //randomly pick direction
 
-        while(setHorizontal = false){ // sub loop that places a ship 
+        while(setHorizontal == false){ // sub loop that places a ship 
             
             if(pickDirection == 0){  //code for horizontal
-                int xpos = rand() % (10-length);
+                int xpos = rand() % (10-currentShip.size);
                 int ypos = rand() % 10;
+                canPlace = false;
 
-                for(int i = xpos; i < xpos+length; i++){ //check ship placement
-                    if(Board::grid[i][ypos].status != '-'){ //if not fully blank break loop
-                        break;
+                for(int i = xpos; i < xpos+currentShip.size; i++){ //check ship placement
+                    if(Board::grid[i][ypos].status == '-'){ //if not fully blank break loop
+                        canPlace = true;
                     }
                     else{ //if all blank, place the ship
-                        for(int i = xpos; i < (xpos+length); i++){
-                            Board::grid[i][ypos].status = 'S';
+                        break;
+                        
+                    }
+                    while(canPlace == true){
+                        for(int i = xpos; i < (xpos+currentShip.size); i++){
+                            Board::grid[i][ypos].status = currentShip.status;
+                            
                         }
                         setHorizontal = true;  
-                        validShip = true; 
+                        validShip = true;
                     }
                 }
             }
@@ -80,19 +90,24 @@ void Board::setShips(int length){
         
 
         
-        while(setVertical = false){ // sub loop that places a ship vertically
+        while(setVertical == false){ // sub loop that places a ship vertically
         
             if(pickDirection == 1){  //code for vertical
                 int xpos = rand() % 10;
-                int ypos = rand() % (10-length);
+                int ypos = rand() % (10-currentShip.size);
+                canPlace = false;
 
-                for(int i = ypos; i < ypos+length; i++){ //check ship placement
-                    if(Board::grid[xpos][i].status != '-'){ // if not fully blank break loop
-                        break;
-                    } 
+                for(int i = ypos; i < ypos+currentShip.size; i++){ //check ship placement
+                    if(Board::grid[xpos][i].status == '-'){ // if not fully blank break loop
+                        canPlace = true;
+                    }
                     else{ //if all blank place ship
-                        for(int i = ypos; i < (ypos+length); i++){
-                            Board::grid[xpos][i].status = 'S';
+                        break;
+                        
+                    }
+                    while(canPlace == true){
+                        for(int i = ypos; i < (ypos+currentShip.size); i++){
+                            Board::grid[xpos][i].status = currentShip.status;
                         }
                         setVertical = true;
                         validShip = true;
@@ -114,14 +129,16 @@ void Board::initBoard(){
             } 
         }
     
-    Board::setShips(s1.size);
-    Board::setShips(s2.size);
-    Board::setShips(s3.size);
-    Board::setShips(s4.size);
-    Board::setShips(s5.size);
+    Board::setShips(s1);
+    Board::setShips(s2);
+    Board::setShips(s3);
+    Board::setShips(s4);
+    Board::setShips(s5);
+    
+    
 };
 
-
+    
 
 
 

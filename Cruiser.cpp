@@ -7,4 +7,4 @@ Cruiser::Cruiser(){
     status = 'C';
     size = 2;
     
-}
+};
