@@ -1,6 +1,11 @@
 #include "Board.h"
 #include "Tile.h"
 #include "Ship.h"
+#include "Aircraft.h"
+#include "Cruiser.h"
+#include "Battleship.h"
+#include "Destroyer.h"
+#include "Submarine.h"
 #include <iostream>
 #include <stdlib.h>
 using namespace std;
@@ -103,8 +108,19 @@ void Board::initBoard(int length){
             grid[x][y].status = '-';
             } 
         }
-    
 };
+
+    //PUT THIS IN INIT BOARD
+    //FUNCTION SETSHIPS, CALL FUNCTION 5 TIMES TO PLACE ALL 5 SHIPS
+    //PLACE SHIPS IN DESCENDING ORDER OF SIZE 
+    //Board::setShips(s1.size)
+    //Board::setShips(s2.size)
+    //Board::setShips(s3.size)
+    //Board::setShips(s4.size)
+    //Board::setShips(s5.size)
+
+
+
 
 
     //int noShipsPlaced = 0;

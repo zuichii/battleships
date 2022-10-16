@@ -5,11 +5,11 @@ void setShips(int length){
     bool setHorizontal = false;
     bool setVertical = false;
     bool validShip = false;
-    int numberOfShips = 5;
+    //int numberOfShips = 5;
     int pickDirection = rand() % 2;
     
     while(validShip = false){  // main loop, that breaks once all 5 ships are placed
-        
+        bool canPlace = true
 
         while(setVertical = false){ // sub loop that places a ship vertically
         
@@ -19,17 +19,24 @@ void setShips(int length){
 
             for(int i = xpos; i < xpos+length; i++){ //loop that checks valid placements
                 if(Board::grid[i][ypos].status != '-'){
+                    canPlace = true;
+                }
+                else{
+                    canPlace = false;
+                }
+                    
+                    
+                    
+                    
                     for(int i = xpos; i < (xpos+length); i++){
                         Board::grid[i][ypos].status = 'S';
                     }
                 }
                 else{
-                    break
+                    break;
                 } 
 
             }
-
-            
             }
         }
 
