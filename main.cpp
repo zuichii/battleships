@@ -5,18 +5,32 @@
 #include "Cruiser.h"
 #include "Destroyer.h"
 #include "Submarine.h"
+#include "Entity.h"
+#include "Computer.h"
+#include "Player.h"
 #include <iostream>
 using namespace std;
 
 int main(){
-    Board a; 
     
-    a.initBoard();
+    // Board yourBoard;
+    // Board enemyBoard; 
+    Computer enemy;
+    cout << enemy.val;
+
+    
+    // yourBoard.initBoard();
+    // enemyBoard.initBoard();
+
     
 
-    a.printBoard();
+    
+    
+    
+    // yourBoard.printBoard();
 
-    return 0;
+
+    // return 0;
     
     
     

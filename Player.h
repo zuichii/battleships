@@ -1,12 +1,19 @@
 #ifndef Player_H
 #define Player_H
+#include "Board.h"
+#include "Entity.h"
 
-class Player{
+#include <iostream>
+
+class Player: public Entity{
     public: 
-    Player();
     
-    int ammo = 25;
-    bool attack(int x, int y);
+
+    // int getX();
+    // int getY();
+    
+
+    virtual bool attack(int x, int y);
 
 };
     
