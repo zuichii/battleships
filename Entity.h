@@ -14,6 +14,7 @@ class Entity {
   //the player and computer child classes will inherit function below 
   //and redefine it
   virtual void attack(Board *attackBoard) = 0;
+  int shipsHit = 0;
 };
 
 #endif

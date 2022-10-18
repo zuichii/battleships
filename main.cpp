@@ -17,8 +17,8 @@ using namespace std;
 int main() {
   Board *userBoard = new Board();   // create board of blanks
   Board *enemyBoard = new Board();  // create board of blanks
-  Computer enemy; //create object (entity) for enemy
-  Player user; //create object (entity) for user
+  Entity *enemy = new Computer(); //create object (entity) for enemy, of class computer
+  Entity *user = new Player(); //create object (entity) for user, of class player
 
   userBoard->initBoard();   // set user ships
   enemyBoard->initBoard();  // set enemy ships
@@ -65,28 +65,30 @@ int main() {
   bool gameWon = false;
   while (gameWon == false) {
     // PLAYER TURN
-    user.attack(enemyBoard);
+    user->attack(enemyBoard);
     enemyBoard->printHiddenBoard();
+    cout << user->shipsHit << endl;
     cout << endl;
 
-    if (user.shipsHit == 17 || enemy.shipsHit == 17) {
+    if (user->shipsHit == 17 || enemy->shipsHit == 17) {
       break;
     }
 
     // ENEMY TURN
-    enemy.attack(userBoard);
+    enemy->attack(userBoard);
     userBoard->printBoard();
+    cout << enemy->shipsHit << endl;
 
-    if (user.shipsHit == 17 || enemy.shipsHit == 17) {
+    if (user->shipsHit == 17 || enemy->shipsHit == 17) {
       break;
     }
   }
 
 //determine who won by who reached 17 ship hits
-  if (user.shipsHit == 17) {
+  if (user->shipsHit == 17) {
     cout << "You have sunk all of the enemy's ships!" << endl;
     cout << "LOL W GANG!";
-  } else if (enemy.shipsHit == 17) {
+  } else if (enemy->shipsHit == 17) {
     cout << "The enemy has sunk all your ships!" << endl;
     cout << "L bozo lol L gang" << endl;
   }
@@ -108,32 +110,32 @@ int main() {
 
 
 // //PLAYER TURN
-// user.attack(enemyBoard);
+// user->attack(enemyBoard);
 // enemyBoard->printHiddenBoard();
 // cout << "End of player turn" << endl;
 
 // //ENEMY TURN
-// enemy.attack(userBoard);
+// enemy->attack(userBoard);
 // userBoard->printBoard();
 // cout << "End of enemy turn" << endl;
 
 //     //PLAYER TURN
-// user.attack(enemyBoard);
+// user->attack(enemyBoard);
 // enemyBoard->printHiddenBoard();
 // cout << "End of player turn" << endl;
 
 // //ENEMY TURN
-// enemy.attack(userBoard);
+// enemy->attack(userBoard);
 // userBoard->printBoard();
 // cout << "End of enemy turn" << endl;
 
 //     //PLAYER TURN
-// user.attack(enemyBoard);
+// user->attack(enemyBoard);
 // enemyBoard->printHiddenBoard();
 // cout << "End of player turn" << endl;
 
 // //ENEMY TURN
-// enemy.attack(userBoard);
+// enemy->attack(userBoard);
 // userBoard->printBoard();
 // cout << "End of enemy turn" << endl;
 
