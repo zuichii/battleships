@@ -1,9 +1,10 @@
 #include "Submarine.h"
-#include "Ship.h"
+
 #include <iostream>
 
-Submarine::Submarine(){
+#include "Ship.h"
 
-    status = 'S';
-    size = 3;
+Submarine::Submarine() {
+  status = 'S';
+  size = 3;
 }

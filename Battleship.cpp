@@ -1,9 +1,10 @@
 #include "Battleship.h"
-#include "Ship.h"
+
 #include <iostream>
 
-Battleship::Battleship(){
+#include "Ship.h"
 
-    status = 'B';
-    size = 4;
+Battleship::Battleship() {
+  status = 'B';
+  size = 4;
 }

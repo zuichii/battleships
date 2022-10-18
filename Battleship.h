@@ -2,11 +2,9 @@
 #define Battleship_H
 #include "Ship.h"
 
-class Battleship: public Ship{
-
-    public:
-        Battleship();
-
+class Battleship : public Ship {
+ public:
+  Battleship();
 };
 
 #endif

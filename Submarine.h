@@ -2,11 +2,9 @@
 #define Submarine_H
 #include "Ship.h"
 
-class Submarine: public Ship{
-
-    public:
-        Submarine();
-
+class Submarine : public Ship {
+ public:
+  Submarine();
 };
 
 #endif

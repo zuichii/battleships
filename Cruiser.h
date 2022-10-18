@@ -1,14 +1,12 @@
 #ifndef Cruiser_H
 #define Cruiser_H
-#include "Ship.h"
 #include <iostream>
 
+#include "Ship.h"
 
-class Cruiser: public Ship{
-
-public:
-
-    Cruiser();
+class Cruiser : public Ship {
+ public:
+  Cruiser();
 };
 
 #endif

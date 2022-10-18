@@ -1,24 +1,15 @@
 #ifndef Ship_H
 #define Ship_H
-#include "Tile.h"
 #include <string>
+
+#include "Tile.h"
 using namespace std;
 
-class Ship: public Tile{
+class Ship : public Tile {
+ public:
+  int size = 2;
+  char status = 'S';
 
-    public:
-
-    int size = 2;
-    bool hit = false;
-    char status = 'S';
-    int totalShips = 5;
-
-    
-    Ship();
-
-
-
-
-
+  Ship();
 };
 #endif

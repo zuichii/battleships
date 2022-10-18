@@ -1,10 +1,10 @@
-#include "Ship.h"
 #include "Cruiser.h"
+
 #include <iostream>
 
-Cruiser::Cruiser(){
+#include "Ship.h"
 
-    status = 'C';
-    size = 2;
-    
+Cruiser::Cruiser() {
+  status = 'C';
+  size = 2;
 };

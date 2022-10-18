@@ -1,15 +1,13 @@
 #ifndef Computer_H
 #define Computer_H
-#include "Board.h"
-#include "Entity.h"
 #include <iostream>
 
+#include "Board.h"
+#include "Entity.h"
 
-
-class Computer: public Entity{
-    public:
-    void attack(Board *attackBoard);
-    int shipsHit = 0;
-
+class Computer : public Entity {
+ public:
+  void attack(Board *attackBoard);
+  int shipsHit = 0;
 };
 #endif
