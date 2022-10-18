@@ -8,8 +8,8 @@
 
 class Computer: public Entity{
     public:
-    int val = 5;
-    virtual bool attack(Board board);
+    void attack(Board *attackBoard);
+    int shipsHit = 0;
 
 };
 #endif

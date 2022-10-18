@@ -5,18 +5,34 @@
 #include <iostream>
 
 
-bool Computer::attack(Board board){
-    std::cout << "test";
-    // srand((unsigned)time(NULL));
-    //     int CPUx = rand() % 10;
-    //     int CPUy = rand() % 10;
-    //     if(Board.grid[CPUx][CPUy].status != '-' ){
-    //         cout << "Your ship has been hit!" << endl
-    //         return true;
-    //         }
-    //         else{
-    //             cout << "The computer missed" << endl
-    //             return false;
-    //         }
-    return true;
+void Computer::attack(Board *attackBoard){
+    
+    bool validAttack = false;
+    
+    while(validAttack == false){
+        
+        srand((unsigned)time(NULL));
+        int CPUx = rand() % 10;
+        int CPUy = rand() % 10;
+
+        if(attackBoard->grid[CPUx][CPUy].isHit == false){
+            if(attackBoard->grid[CPUx][CPUy].status != '-' ){
+                cout << "YOUR SHIP HAS BEEN HIT!" << endl;
+                attackBoard->grid[CPUx][CPUy].isHit = true;
+                attackBoard->grid[CPUx][CPUy].status = 'X';
+                shipsHit++;
+                validAttack = true;
+
+            }
+            else{
+                cout << "THE COMPUTER MISSED" << endl;
+                attackBoard->grid[CPUx][CPUy].isHit = true;
+                validAttack = true;
+            }
+
+        }
+
+    }
+    return;
+
 };

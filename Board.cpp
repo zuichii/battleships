@@ -12,8 +12,8 @@ using namespace std;
 
 
 Board::Board(){
-
 };
+
 
 
 void Board::updateBoard(bool hasShip, int x, int y){
@@ -43,6 +43,26 @@ void Board::printBoard(){
 };
 
 
+void Board::printHiddenBoard(){
+    cout << "  0 1 2 3 4 5 6 7 8 9" << endl;
+        char rowLabel = '0';
+        for (int row = 0; row <10; row++){
+            cout << rowLabel << ' ';
+            rowLabel++;
+            for (int col = 0; col <10; col++){
+                if(grid[row][col].isHit == true){
+                    cout << grid[row][col].status << " "; 
+                }
+                else{
+                    cout << "-" << " ";
+                }
+            }
+            cout << endl;
+        }
+    return;
+};
+
+
 void Board::setShips(Ship currentShip){
     
     bool setHorizontal = false;
@@ -50,8 +70,10 @@ void Board::setShips(Ship currentShip){
     bool validShip = false;
     //int numberOfShips = 5;
     int canPlace;
+    
     int pickDirection = rand() % 2; //randomly pick direction
     srand (time(NULL));
+    
     
     
     
@@ -135,6 +157,22 @@ void Board::initBoard(){
     
     
 };
+
+// void Board::initBoardCPU(){
+//     for(int x = 0; x < 10; x++){
+//         for(int y = 0; y < 10; y++){
+//             grid[x][y].status = '-';
+//             } 
+//         }
+    
+//     Board::setShips(s1);
+//     Board::setShips(s2);
+//     Board::setShips(s3);
+//     Board::setShips(s4);
+//     Board::setShips(s5);
+    
+    
+// };
 
 
 

@@ -9,12 +9,11 @@ class Player: public Entity{
     public: 
     
 
-    // int getX();
-    // int getY();
-    
+    int getX();
+    int getY();
+    int shipsHit = 0;
 
-    virtual bool attack(int x, int y);
-
+    void attack(Board *attackBoard);
 };
     
 #endif

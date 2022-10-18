@@ -10,6 +10,7 @@ class Tile{
         int xpos;
         int ypos;
         char status;
+        bool isHit = false;
 
     Tile();
 };

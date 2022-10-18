@@ -8,7 +8,7 @@ class Entity{
     public:
     Entity();
     
-    virtual bool attack(Board board) = 0;
+    virtual void attack(Board *attackBoard) = 0;
 
 };
 
