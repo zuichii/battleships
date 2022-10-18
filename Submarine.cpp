@@ -4,7 +4,7 @@
 
 #include "Ship.h"
 
-Submarine::Submarine() {
+Submarine::Submarine() { //submarine inherits from ship
   status = 'S';
   size = 3;
 }

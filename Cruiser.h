@@ -4,7 +4,7 @@
 
 #include "Ship.h"
 
-class Cruiser : public Ship {
+class Cruiser : public Ship { //cruiser inherits from ship
  public:
   Cruiser();
 };

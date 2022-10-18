@@ -17,17 +17,18 @@ using namespace std;
 int main() {
   Board *userBoard = new Board();   // create board of blanks
   Board *enemyBoard = new Board();  // create board of blanks
-  Computer enemy;
-  Player user;
+  Computer enemy; //create object (entity) for enemy
+  Player user; //create object (entity) for user
 
-  userBoard->initBoard();   // setships
-  enemyBoard->initBoard();  // setships
+  userBoard->initBoard();   // set user ships
+  enemyBoard->initBoard();  // set enemy ships
 
   cout << "WELCOME TO BATTLESHIPS!" << endl;
   cout << "Your ships have randomly been placed on the board for you." << endl;
   cout << "You will be versing a computer who is trying to destroy your ships."
        << endl;
   cout << "You must sink all of the enemy's ships in order to win!" << endl;
+  cout << "Good luck!" << endl;
 
   cout << "######################" << endl;
 
@@ -42,25 +43,31 @@ int main() {
 
   cout << "######################" << endl;
 
-  cout << "The top board is to see where you are attacking" << endl;
-  cout << "The bottom board is where you will see your ships being attacked"
+  cout << "The top board is to see where you are attacking." << endl;
+  cout << "The bottom board is where you will see your ships being attacked."
        << endl;
+  cout << "To attack, simply enter a row and a column coordinate in the terminal." << endl;
   cout << endl;
-  enemyBoard->printBoard();
+  enemyBoard->printHiddenBoard();
+  cout << endl;
   userBoard->printBoard();
   cout << endl;
 
-  cout << "Good luck!" << endl;
+  
 
   cout << "######################" << endl;
 
+
+  //main game loop
+  //this loop will alternate through player and enemy attacking turns
+  //until the game is finished
+  //the program knows when the game is won when 17 ship tiles are hit
   bool gameWon = false;
   while (gameWon == false) {
     // PLAYER TURN
     user.attack(enemyBoard);
     enemyBoard->printHiddenBoard();
-    cout << "End of player turn" << endl;
-    cout << "######################" << endl;
+    cout << endl;
 
     if (user.shipsHit == 17 || enemy.shipsHit == 17) {
       break;
@@ -69,27 +76,36 @@ int main() {
     // ENEMY TURN
     enemy.attack(userBoard);
     userBoard->printBoard();
-    cout << "End of enemy turn" << endl;
 
     if (user.shipsHit == 17 || enemy.shipsHit == 17) {
       break;
     }
   }
 
+//determine who won by who reached 17 ship hits
   if (user.shipsHit == 17) {
     cout << "You have sunk all of the enemy's ships!" << endl;
-    cout << "Congratulations!";
+    cout << "LOL W GANG!";
   } else if (enemy.shipsHit == 17) {
     cout << "The enemy has sunk all your ships!" << endl;
-    cout << "L bozo :(" << endl;
+    cout << "L bozo lol L gang" << endl;
   }
 
+  
   // FREE MEMORY
   delete[] userBoard;
   delete[] enemyBoard;
 
   return 0;
 }
+
+
+
+
+
+//PREVOIUS IMPLEMENTATION/TESTING OF ALGORITHMS AND CODE BELOW
+
+
 
 // //PLAYER TURN
 // user.attack(enemyBoard);

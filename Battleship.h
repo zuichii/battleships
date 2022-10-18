@@ -2,7 +2,7 @@
 #define Battleship_H
 #include "Ship.h"
 
-class Battleship : public Ship {
+class Battleship : public Ship { //battleship inherits from ship
  public:
   Battleship();
 };

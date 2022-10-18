@@ -4,7 +4,7 @@
 
 #include "Ship.h"
 
-Aircraft::Aircraft() {
+Aircraft::Aircraft() { //aircraft inherits from ship
   status = 'A';
   size = 5;
 };

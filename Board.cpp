@@ -13,19 +13,13 @@
 #include "Tile.h"
 using namespace std;
 
-Board::Board(){};
+Board::Board(){}; 
 
-// void Board::updateBoard(bool hasShip, int x, int y){
-//     if(hasShip == true){
-//         grid[x][y].status = 'S';
 
-//     }
-//     else{
-//         grid[x][y].status = 0;
-//     }
-// }
-
-void Board::printBoard() {
+//the following function printBoard, prints the status of each tile into grid format
+//this will be the board the player will see in the UI
+void Board::printBoard() { 
+  cout << "      YOUR BOARD:   " << endl;
   cout << "  0 1 2 3 4 5 6 7 8 9" << endl;
   char rowLabel = '0';
   for (int row = 0; row < 10; row++) {
@@ -39,7 +33,13 @@ void Board::printBoard() {
   return;
 };
 
+
+//the following function printHiddenBoard is a modification of the above printBoard function
+//this board is used for tracking ship hits and misses
+//essentially, all spaces are printed as a '-'
+//if a tile is hit through the attack function, then its status will be printed instead (X/0)
 void Board::printHiddenBoard() {
+  cout << "      ENEMY BOARD:   " << endl;
   cout << "  0 1 2 3 4 5 6 7 8 9" << endl;
   char rowLabel = '0';
   for (int row = 0; row < 10; row++) {
@@ -58,11 +58,11 @@ void Board::printHiddenBoard() {
   return;
 };
 
+//the following function will take in a ship as a parameter and use its size to place a ship on the board
 void Board::setShips(Ship currentShip) {
   bool setHorizontal = false;
   bool setVertical = false;
   bool validShip = false;
-  // int numberOfShips = 5;
   int canPlace;
 
   int pickDirection = rand() % 2;  // randomly pick direction
@@ -76,17 +76,17 @@ void Board::setShips(Ship currentShip) {
         srand((unsigned)time(NULL));
         int xpos = rand() % (10 - currentShip.size);
         int ypos = rand() % 10;
-        canPlace = 0;
+        canPlace = 0; //counter that checks empty tiles
 
         for (int i = xpos; i < xpos + currentShip.size;
              i++) {  // check ship placement
           if (Board::grid[i][ypos].status ==
-              '-') {  // check if the desired space is empty
+              '-') {  // check each individual tile of the ship placement
             canPlace++;
-          } else {  // if not empty, breaak
+          } else {  // if not empty, break
             break;
           }
-          if (canPlace == currentShip.size) {
+          if (canPlace == currentShip.size) { //set the ship on the board and end the loop
             for (int i = xpos; i < (xpos + currentShip.size); i++) {
               Board::grid[i][ypos].status = currentShip.status;
             }
@@ -105,17 +105,17 @@ void Board::setShips(Ship currentShip) {
         srand((unsigned)time(NULL));
         int xpos = rand() % 10;
         int ypos = rand() % (10 - currentShip.size);
-        canPlace = 0;
+        canPlace = 0; //counter that checks empty tiles
 
         for (int i = ypos; i < ypos + currentShip.size;
              i++) {  // check ship placement
           if (Board::grid[xpos][i].status ==
-              '-') {  // if not fully blank break loop
+              '-') {  // check each individual tile of the ship placement
             canPlace++;
-          } else {  // if all blank place ship
+          } else {  // if not empty break
             break;
           }
-          if (canPlace == currentShip.size) {
+          if (canPlace == currentShip.size) { //set the ship on the board and end the loop
             for (int i = ypos; i < (ypos + currentShip.size); i++) {
               Board::grid[xpos][i].status = currentShip.status;
             }
@@ -130,6 +130,10 @@ void Board::setShips(Ship currentShip) {
   }
 };
 
+//function to initialize board
+//initially set everything to blanks
+//call the setShips function 5 times, to set each of the 5 ships
+//in descending order
 void Board::initBoard() {
   for (int x = 0; x < 10; x++) {
     for (int y = 0; y < 10; y++) {
@@ -143,6 +147,13 @@ void Board::initBoard() {
   Board::setShips(s4);
   Board::setShips(s5);
 };
+
+
+
+
+//PREVIOUS IMPLMENTATION/ALGORITHMS/TESTING BELOW
+
+
 
 // void Board::initBoardCPU(){
 //     for(int x = 0; x < 10; x++){
@@ -254,3 +265,14 @@ void Board::initBoard() {
 
 //}
 // return;
+
+
+// void Board::updateBoard(bool hasShip, int x, int y){
+//     if(hasShip == true){
+//         grid[x][y].status = 'S';
+
+//     }
+//     else{
+//         grid[x][y].status = 0;
+//     }
+// }

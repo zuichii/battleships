@@ -4,7 +4,7 @@
 
 #include "Ship.h"
 
-Battleship::Battleship() {
+Battleship::Battleship() { //battleship inherits from ship
   status = 'B';
   size = 4;
 }

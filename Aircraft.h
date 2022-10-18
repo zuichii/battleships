@@ -5,7 +5,7 @@
 #include "Ship.h"
 using namespace std;
 
-class Aircraft : public Ship {
+class Aircraft : public Ship { //aircraft inherits from ship
  public:
   Aircraft();
 };

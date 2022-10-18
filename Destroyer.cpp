@@ -4,7 +4,7 @@
 
 #include "Ship.h"
 
-Destroyer::Destroyer() {
+Destroyer::Destroyer() { //destroyer inherits from ship
   status = 'D';
   size = 3;
 }
