@@ -67,28 +67,28 @@ int main() {
     // PLAYER TURN
     user->attack(enemyBoard);
     enemyBoard->printHiddenBoard();
-    cout << user->shipsHit << endl;
+    cout << user->getHits() << endl;
     cout << endl;
 
-    if (user->shipsHit == 17 || enemy->shipsHit == 17) {
+    if (user->getHits() == 17 || enemy->getHits() == 17) {
       break;
     }
 
     // ENEMY TURN
     enemy->attack(userBoard);
     userBoard->printBoard();
-    cout << enemy->shipsHit << endl;
+    cout << enemy->getHits() << endl;
 
-    if (user->shipsHit == 17 || enemy->shipsHit == 17) {
+    if (user->getHits() == 17 || enemy->getHits() == 17) {
       break;
     }
   }
 
 //determine who won by who reached 17 ship hits
-  if (user->shipsHit == 17) {
+  if (user->getHits() == 17) {
     cout << "You have sunk all of the enemy's ships!" << endl;
     cout << "LOL W GANG!";
-  } else if (enemy->shipsHit == 17) {
+  } else if (enemy->getHits() == 17) {
     cout << "The enemy has sunk all your ships!" << endl;
     cout << "L bozo lol L gang" << endl;
   }

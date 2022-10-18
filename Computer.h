@@ -7,7 +7,11 @@
 
 class Computer : public Entity { //class computer inherits from entity
  public:
+	 Computer();
   void attack(Board *attackBoard); //this is the computers version of the attack function defined in entity
+  void incrementHits();
+  int getHits();
+ private:
   int shipsHit = 0;
 };
 #endif

@@ -9,6 +9,10 @@
 //function that gets a row input from the user
 //it will keep asking the user for inputs until a valid input has been passed
 //a valid input is strictly a number between 0 and 9 inclusive
+
+Player::Player() {
+	shipsHit = 0;
+}
 int Player::getRow() {
   std::string rowInput;
   std::cout << "Enter a row coordinate between 0 and 9 (inclusive): " << endl;
@@ -38,6 +42,12 @@ int Player::getCol() {
 };
 
 
+void Player::incrementHits() {
+	shipsHit++;
+	return;
+}
+
+
 //player attack function below
 //the function ensures that the same space cannot be attacked more than once
 void Player::attack(Board *attackBoard) {
@@ -53,7 +63,7 @@ void Player::attack(Board *attackBoard) {
         attackBoard->grid[userX][userY].status = 'X'; //ship hits are denoted as X
         cout << "YOU HIT A SHIP!" << endl;
         cout << endl;
-        shipsHit++;
+	incrementHits();
         return;
       } else {
         attackBoard->grid[userX][userY].isHit = true; //flag tile as hit
@@ -69,6 +79,9 @@ void Player::attack(Board *attackBoard) {
   return;
 };
 
+int Player::getHits() {
+	return shipsHit;
+}
 
 
 //PREVIOUS IMPLEMENTATIONS/WORKINGS/TESTING BELOW

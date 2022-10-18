@@ -8,6 +8,19 @@
 
 //computer attack function below
 // the function ensures that the same space cannot be attacked more than once
+
+Computer::Computer() {
+	shipsHit = 0;
+}
+
+void Computer::incrementHits() {
+	shipsHit++;
+	return;
+}
+
+int Computer::getHits() {
+	return shipsHit;
+}
 void Computer::attack(Board *attackBoard) {
   bool validAttack = false;
 
@@ -25,7 +38,7 @@ void Computer::attack(Board *attackBoard) {
         attackBoard->grid[cpuX][cpuY].status = 'X';
         cout << "YOUR SHIP HAS BEEN HIT!" << endl;
         cout << endl;
-        shipsHit++;
+	      incrementHits();
         validAttack = true;
 
       } else {

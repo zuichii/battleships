@@ -7,11 +7,14 @@
 
 class Player : public Entity { //class player inherits from entity
  public:
+	 Player();
   int getRow();
   int getCol();
-  int shipsHit = 0; 
-
+  int getHits();
+  void incrementHits();
   void attack(Board *attackBoard); //this is the players version of the attack function defined in entity
+ private:
+  int shipsHit = 0; 
 };
 
 #endif
